@@ -1,12 +1,16 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" hredf="{% static 'page/css/home.css' %}">
+    <script src="{% static 'page/js/hello.js' %}"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
+    <h1>혜인이의 방</h1>
     홈
     {% for post in posts %}
     <a href="{% url 'detail' post.id %}">{{post.title}}</a>
@@ -15,5 +19,6 @@
     {{post.pub_date}}<br>
     <br>
     {% endfor %}
+    <input type="button" value="안녕하세요" onclick="hello()">
 </body>
 </html>
